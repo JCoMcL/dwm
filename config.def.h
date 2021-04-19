@@ -48,8 +48,8 @@ static const Layout layouts[] = {
 	{ "",      monocle }, /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "",      tile },
-	{ "",      NULL },    /* placeholder */
-	{ "",      NULL },    /* placeholder */
+	{ "",      centeredmaster },
+	{ "",      bstack },
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
@@ -82,6 +82,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask|ControlMask, XK_Return, incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Up,     setcfact,       {.f = -0.10} },
+	{ MODKEY,                       XK_Down,   setcfact,       {.f = +0.10} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
