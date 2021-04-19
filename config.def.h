@@ -41,8 +41,8 @@ static const Layout layouts[] = {
 	{ "",      monocle }, /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
 	{ "",      tile },
-	{ "",      NULL },    /* placeholder */
-	{ "",      NULL },    /* placeholder */
+	{ "",      centeredmaster },
+	{ "",      bstack },
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
