@@ -38,9 +38,9 @@ static const int resizehints = 1;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "",      monocle },
+	{ "",      monocle }, /* first entry is default */
 	{ "",      NULL },    /* no layout function means floating behavior */
-	{ "",      tile },    /* first entry is default */
+	{ "",      tile },
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
 	{ "",      NULL },    /* placeholder */
@@ -69,32 +69,32 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
-	{ MODKEY,             		XK_grave,  spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_grave,  spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,     focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,   focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Return, incnmaster,     {.i = +1 } },
 	{ MODKEY|ShiftMask|ControlMask, XK_Return, incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,   setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,  setmfact,       {.f = +0.05} },
-	{ MODKEY,      			XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_F1,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_F4,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_F5,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_F6,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY,                       XK_F7,      setlayout,      {.v = &layouts[6]} },
-	{ MODKEY,                       XK_F8,      setlayout,      {.v = &layouts[7]} },
-	{ MODKEY,                       XK_F9,      setlayout,      {.v = &layouts[8]} },
-	{ MODKEY,                       XK_F10,      setlayout,      {.v = &layouts[9]} },
+	{ MODKEY,                       XK_F1,     setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_F2,     setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_F3,     setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_F4,     setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_F5,     setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_F6,     setlayout,      {.v = &layouts[5]} },
+	{ MODKEY,                       XK_F7,     setlayout,      {.v = &layouts[6]} },
+	{ MODKEY,                       XK_F8,     setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,                       XK_F9,     setlayout,      {.v = &layouts[8]} },
+	{ MODKEY,                       XK_F10,    setlayout,      {.v = &layouts[9]} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_Home, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_Home, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_Home,   focusmon,       {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_Home,   tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
